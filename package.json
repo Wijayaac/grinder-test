@@ -5,5 +5,12 @@
   "license": "MIT",
   "dependencies": {
     "laravel-mix": "^6.0.39"
+  },
+  "devDependencies": {
+    "node-sass": "^6.0.1",
+    "resolve-url-loader": "^4.0.0",
+    "sass": "^1.43.4",
+    "sass-loader": "^12.3.0",
+    "webpack-livereload-plugin": "1"
   }
 }

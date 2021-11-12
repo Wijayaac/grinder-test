@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "CrimsonText Bold";
+  src: url("../fonts/Crimson_Text/CrimsonText-Bold.ttf");
+}
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("../fonts/Barlow_Condensed/BarlowCondensed-Regular.ttf");
+}
+.block {
+  display: block;
+}
+.block__element {
+  background-color: green;
+}
+.block--modifier {
+  background-color: blue;
+}
+
+h2 {
+  font-family: "CrimsonText Bold", Fallback, serif;
+  color: blue;
+}
+
+p {
+  font-family: "Barlow Condensed", Fallback, "sans serif";
+}
