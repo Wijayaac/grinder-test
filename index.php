@@ -84,7 +84,7 @@ if (!$data === false) {
     </section>
     <!-- End benefit section -->
     <!-- Begin Blog section -->
-    <section class="blog" data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease">
+    <section class="blog" data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease" id="blogSection">
         <div class="blog__image" style="background-image: url('./public/images/blog-1.jpg');"></div>
         <div class="blog__body">
             <p class="blog__tag">blog</p>

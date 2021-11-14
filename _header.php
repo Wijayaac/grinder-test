@@ -11,9 +11,9 @@
             </a>
             <div class="hide-for-mobile navbar__links ">
                 <a href="#">About</a>
-                <a href="#">Menu</a>
+                <a href="#menuSection">Menu</a>
                 <a href="#">Moods</a>
-                <a href="#">Blog</a>
+                <a href="#blogSection">Blog</a>
                 <a href="#">Contact</a>
                 <a href="#"><img src="./public/icons/search.svg" alt="search icon"></a>
             </div>
