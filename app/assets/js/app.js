@@ -4,7 +4,7 @@ const overlay = document.querySelector(".overlay");
 const fadeElements = document.querySelectorAll(".has-fade");
 const body = document.querySelector("body");
 
-btnHamburger.addEventListener("click", function () {
+btnHamburger.addEventListener("click", () => {
   if (navbar.classList.contains("open")) {
     //close hamburger menu
     body.classList.remove("noscroll");
