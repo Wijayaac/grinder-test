@@ -78,13 +78,16 @@
 
   &__button {
     padding: 0.575rem 2.1875rem;
-    display: inline-block;
+    display: block;
     text-transform: uppercase;
     color: $white;
     margin: 0;
     width: 100%;
     @include breakpoint-up(medium) {
       width: 11rem;
+    }
+    &:hover {
+      padding-left: 0;
     }
   }
 }

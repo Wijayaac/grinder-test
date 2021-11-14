@@ -399,7 +399,7 @@ button:hover::after,
 }
 .footer__button {
   padding: 0.575rem 2.1875rem;
-  display: inline-block;
+  display: block;
   text-transform: uppercase;
   color: white;
   margin: 0;
@@ -409,6 +409,9 @@ button:hover::after,
   .footer__button {
     width: 11rem;
   }
+}
+.footer__button:hover {
+  padding-left: 0;
 }
 
 .hero__image {
