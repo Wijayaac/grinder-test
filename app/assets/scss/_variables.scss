@@ -1,0 +1,31 @@
+// Colors
+$darkBlue: hsl(233, 26%, 24%);
+$limeGreen: hsl(136, 65%, 51%);
+$brightCyan: hsl(192, 70%, 51%);
+
+$grayishBlue: hsl(233, 8%, 62%);
+$lightGrayishBlue: hsl(220, 16%, 96%);
+$veryLightGray: hsl(0, 0%, 98%);
+$white: hsl(0, 0%, 100%);
+
+$lightBrown: #f2c46d;
+$darkBrown: #2e2e2e;
+$brightBrown: rgba($darkBrown, $alpha: 0.5);
+
+// Fontsize
+$font-sm: 1.25rem; //20px
+$font-md: 1.5rem; //24px
+$font-lg: 3.125rem; //42px
+$font-xl: 4.25rem; //52px
+
+// Font family
+@font-face {
+  font-family: "CrimsonText Bold";
+  src: url("../fonts/Crimson_Text/CrimsonText-SemiBold.ttf");
+}
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("../fonts/Barlow_Condensed/BarlowCondensed-Regular.ttf");
+}
+$mainFont: "CrimsonText Bold", Fallback, serif;
+$secondaryFont: "Barlow Condensed", Fallback, "sans serif";

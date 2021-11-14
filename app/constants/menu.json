@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "caption": "Coffee",
+    "alt": "coffee image",
+    "source": "/public/images/Gallery-1.jpg"
+  },
+  {
+    "id": 2,
+    "caption": "Breakfast",
+    "alt": "coffee image",
+    "source": "/public/images/Gallery-2.jpg"
+  },
+  {
+    "id": 3,
+    "caption": "Sandwich",
+    "alt": "coffee image",
+    "source": "/public/images/Gallery-3.jpg"
+  },
+  {
+    "id": 4,
+    "caption": "Juice",
+    "alt": "coffee image",
+    "source": "/public/images/Gallery-4.jpg"
+  }
+]

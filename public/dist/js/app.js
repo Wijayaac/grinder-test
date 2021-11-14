@@ -7,8 +7,45 @@
   \******************************/
 /***/ (() => {
 
-// test laravel mix
-// alert("hello World");
+var btnHamburger = document.querySelector("#btnHamburger");
+var navbar = document.querySelector(".navbar");
+var overlay = document.querySelector(".overlay");
+var fadeElements = document.querySelectorAll(".has-fade");
+var body = document.querySelector("body");
+btnHamburger.addEventListener("click", function () {
+  if (navbar.classList.contains("open")) {
+    //close hamburger menu
+    body.classList.remove("noscroll");
+    navbar.classList.remove("open");
+    fadeElements.forEach(function (element) {
+      element.classList.remove("fade-in");
+      element.classList.add("fade-out");
+    });
+  } else {
+    //open hamburger menu
+    body.classList.add("noscroll");
+    navbar.classList.add("open");
+    fadeElements.forEach(function (element) {
+      element.classList.remove("fade-out");
+      element.classList.add("fade-in");
+    });
+  }
+});
+window.addEventListener("scroll", function () {
+  var windowpos = document.querySelector("html").scrollTop;
+  var navbar = document.querySelector(".navbar");
+  var navbarTopPos = navbar.getBoundingClientRect().top;
+
+  if (windowpos >= navbarTopPos && !navbar.classList.contains("navbar__scrolled")) {
+    navbar.classList.add("navbar__scrolled");
+  } else if (windowpos <= navbarTopPos && navbar.classList.contains("navbar__scrolled")) {
+    navbar.classList.remove("navbar__scrolled");
+  }
+}); // initialize sal js
+
+sal({
+  threshold: 0.2
+});
 
 /***/ }),
 

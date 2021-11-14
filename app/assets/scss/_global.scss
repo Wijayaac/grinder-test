@@ -1,0 +1,102 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $secondaryFont;
+  font-size: $font-md;
+  color: $grayishBlue;
+  line-height: 1.3em;
+  font-weight: 300;
+  overflow-x: hidden;
+
+  @include breakpoint-up(large) {
+    font-size: $font-md;
+  }
+  &.noscroll {
+    overflow: hidden;
+  }
+}
+// Text
+h1,
+h2,
+h3 {
+  line-height: 1.15;
+  margin-top: 0;
+  color: $darkBrown;
+  font-family: $mainFont;
+}
+
+p {
+  line-height: 1.5;
+  margin-bottom: 2.25rem;
+}
+
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 63.375rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button,
+.button {
+  position: relative;
+  display: inline-block;
+  padding: 0.875rem 2.1875rem;
+  background-color: $lightBrown;
+  border: 0;
+  cursor: pointer;
+  font-size: $font-md;
+  font-family: $secondaryFont;
+  transition: opacity 300ms ease;
+  overflow: hidden;
+  &::before {
+    content: "";
+    margin-right: 12px;
+  }
+  &::after {
+    content: "\2192";
+    color: $white;
+    position: absolute;
+    right: -28px;
+    transition: all 0.3s ease;
+  }
+  &:hover {
+    opacity: 1;
+    padding-right: 20px;
+    padding-left: 20px;
+    &::after {
+      right: 30px;
+    }
+  }
+}
+
+// Visibility
+.hide-for-mobile {
+  // hide for tablet and mobile
+  @include breakpoint-down(medium) {
+    display: none;
+  }
+}
+.hide-for-desktop {
+  // hide for desktop viewport width
+  @include breakpoint-up(large) {
+    display: none;
+  }
+}

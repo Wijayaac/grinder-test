@@ -1,0 +1,90 @@
+.footer {
+  background-color: $darkBrown;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 4rem 0;
+  &__logo {
+    margin: 10px 0;
+    @include breakpoint-up(medium) {
+      margin-right: 7rem;
+    }
+  }
+  &__subscription {
+    margin: 10px 0;
+    text-align: center;
+    @include breakpoint-up(medium) {
+      margin-left: 7rem;
+    }
+  }
+  &__detail {
+    color: $white;
+  }
+  &__address,
+  &__contact {
+    margin: 0;
+    font-size: $font-sm;
+  }
+  &__subscription {
+    form {
+      display: flex;
+      flex-direction: row;
+      margin: 10px 20px;
+      flex-wrap: wrap;
+    }
+    p {
+      margin: 0;
+      color: $white;
+      text-transform: uppercase;
+    }
+    .footer__input {
+      padding: 1.2rem 0;
+      background-color: $darkBrown;
+      border: 1px solid $white;
+      margin: 0;
+      width: 100%;
+      @include breakpoint-up(medium) {
+        width: 55%;
+        padding: 0.575rem 2.1875rem;
+      }
+      &::placeholder {
+        text-transform: uppercase;
+        font-family: $secondaryFont;
+        font-size: $font-md - 0.25;
+        color: $white;
+        text-align: center;
+        @include breakpoint-up(medium) {
+          text-align: left;
+        }
+      }
+    }
+  }
+  &__social {
+    margin-top: 15px;
+    text-align: left;
+    @include breakpoint-down(small) {
+      text-align: center;
+    }
+  }
+  &__link {
+    display: inline-block;
+    margin: 0 5px;
+    img {
+      color: $white;
+    }
+  }
+
+  &__button {
+    padding: 0.575rem 2.1875rem;
+    display: inline-block;
+    text-transform: uppercase;
+    color: $white;
+    margin: 0;
+    width: 100%;
+    @include breakpoint-up(medium) {
+      width: 11rem;
+    }
+  }
+}
