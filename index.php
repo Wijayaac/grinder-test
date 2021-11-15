@@ -26,20 +26,22 @@ if (!$data === false) {
     <section class="hero">
         <div class="hero__image">
             <h1 class="hero__text">Life begins after Coffee</h1>
-            <a href="#menuSection" class="button hero__link" data-sal="fade" data-sal-delay="300" data-sal-easing="ease">View Menu</a>
+            <a href="#menuSection" class="button hero__link" data-sal="fade" data-sal-delay="300" data-sal-duration="500" data-sal-easing="ease">View Menu</a>
         </div>
     </section>
     <!-- End Hero Section -->
     <!-- Begin Menu Section -->
-    <section class="menu" id="menuSection" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease">
-        <h2 class="menu__title">What would you like to have?</h2>
-        <p class="menu__text">
-            Coffee plunger pot sweet barista, grounds acerbic coffee instant crema cream in half and half. Spoon lungo
-            variety, as, siphon, ristretto, iced brewed and acerbic affogato grinder.
-        </p>
+    <section class="menu" id="menuSection" data-sal="slide-up" data-sal-delay="200" data-sal-duration="500" data-sal-easing="ease">
+        <div data-sal="slide-up" data-sal-delay="200" data-sal-duration="500" data-sal-easing="ease">
+            <h2 class="menu__title">What would you like to have?</h2>
+            <p class="menu__text">
+                Coffee plunger pot sweet barista, grounds acerbic coffee instant crema cream in half and half. Spoon lungo
+                variety, as, siphon, ristretto, iced brewed and acerbic affogato grinder.
+            </p>
+        </div>
         <div class="menu__wrapper">
             <?php foreach ($menus as $item) : ?>
-                <a href="#" class="menu__item">
+                <a href="#" class="menu__item" data-sal="slide-left" data-sal-delay="<?= $item['id'] * 200 ?>" data-sal-duration="600" data-sal-easing="ease">
                     <div class="menu__image" style="background-image: url('<?= $item['source'] ?> ');">
                     </div>
                     <p class="menu__caption"><?= $item['caption'] ?></p>
@@ -55,7 +57,7 @@ if (!$data === false) {
         <p class="contact__text">Coffee plunger pot sweet barista, grounds acerbic coffee instant crema cream in half and half. Spoon lungo
             variety, as, siphon, ristretto, iced brewed and acerbic affogato grinder. Mazagran café au lait wings spoon,
             percolator milk latte dark strong. Whipped, ﬁlter latte, ﬁlter aromatic grounds doppio caramelization half and half.</p>
-        <a href="#" class="button contact__button" data-sal="fade" data-sal-delay="300" data-sal-easing="ease">contact us</a>
+        <a href="#" class="button contact__button" data-sal="fade" data-sal-duration="500" data-sal-delay="300" data-sal-easing="ease">contact us</a>
     </section>
     <!-- End Contact Section -->
     <!-- Begin benefit section -->
@@ -84,7 +86,7 @@ if (!$data === false) {
     </section>
     <!-- End benefit section -->
     <!-- Begin Blog section -->
-    <section class="blog" data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease" id="blogSection">
+    <section class="blog" data-sal="slide-up" data-sal-delay="300" data-sal-duration="600" data-sal-easing="ease" id="blogSection">
         <div class="blog__image" style="background-image: url('./public/images/blog-1.jpg');"></div>
         <div class="blog__body">
             <p class="blog__tag">blog</p>

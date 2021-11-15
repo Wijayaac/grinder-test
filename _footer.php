@@ -16,10 +16,10 @@
         </div>
     </div>
     <div class="footer__subscription">
-        <p>newsletter</p>
-        <form>
+        <p class="footer__subscription-header">newsletter</p>
+        <form class="footer__subscription-form">
             <input class="footer__input" placeholder="your email address" type="email">
-            <a class="button footer__button" type="submit">subscribe</a>
+            <a class="button footer__button">subscribe</a>
         </form>
     </div>
 </footer>

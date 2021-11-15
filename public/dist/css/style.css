@@ -325,13 +325,24 @@ button:hover::after,
   margin: 0;
   font-size: 1.25rem;
 }
-.footer__subscription form {
+.footer__subscription {
+  margin: 10px 0;
+  text-align: center;
+  width: 30%;
+}
+@media (min-width: 40em) {
+  .footer__subscription {
+    margin-left: 5rem;
+  }
+}
+.footer__subscription-form {
   display: flex;
   flex-direction: row;
-  margin: 10px 20px;
+  margin: 10px 0;
   flex-wrap: wrap;
+  position: relative;
 }
-.footer__subscription p {
+.footer__subscription-header {
   margin: 0;
   color: white;
   text-transform: uppercase;
@@ -342,11 +353,13 @@ button:hover::after,
   border: 1px solid white;
   margin: 0;
   width: 100%;
+  color: white;
+  font-family: "Barlow Condensed", Fallback, "sans serif";
 }
 @media (min-width: 40em) {
   .footer__subscription .footer__input {
-    width: 55%;
-    padding: 0.575rem 2.1875rem;
+    width: 50%;
+    padding: 0.875rem 10px;
   }
 }
 .footer__subscription .footer__input::-moz-placeholder {
@@ -398,8 +411,6 @@ button:hover::after,
   color: white;
 }
 .footer__button {
-  padding: 0.575rem 2.1875rem;
-  display: block;
   text-transform: uppercase;
   color: white;
   margin: 0;
@@ -407,11 +418,8 @@ button:hover::after,
 }
 @media (min-width: 40em) {
   .footer__button {
-    width: 11rem;
+    width: 12rem;
   }
-}
-.footer__button:hover {
-  padding-left: 0;
 }
 
 .hero__image {
