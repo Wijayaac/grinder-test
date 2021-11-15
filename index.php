@@ -30,6 +30,7 @@ if (!$data === false) {
         </div>
     </section>
     <!-- End Hero Section -->
+    <!-- testing -->
     <!-- Begin Menu Section -->
     <section class="menu" id="menuSection" data-sal="slide-up" data-sal-delay="200" data-sal-duration="500" data-sal-easing="ease">
         <div data-sal="slide-up" data-sal-delay="200" data-sal-duration="500" data-sal-easing="ease">
