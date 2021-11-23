@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "watch": "npx mix watch",
+    "dev": "npx mix"
+  },
   "dependencies": {
     "laravel-mix": "^6.0.39"
   },

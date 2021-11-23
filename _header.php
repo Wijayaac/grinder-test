@@ -3,7 +3,7 @@
     <nav class="navbar">
         <div class="container">
             <a href="/" class="navbar__logo">
-                <img src="/public/icons/logo.svg" alt="easybank" /></a>
+                <img src="./public/icons/logo.svg" alt="easybank" /></a>
             <a id="btnHamburger" href="#" class="navbar__toggle hide-for-desktop">
                 <span></span>
                 <span></span>
