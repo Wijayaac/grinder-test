@@ -423,7 +423,6 @@ button:hover::after,
 }
 
 .hero__image {
-  background-image: url("/public/images/Header-image.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -475,10 +474,6 @@ button:hover::after,
   }
 }
 .menu__wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
   margin-top: 4rem;
 }
 .menu__wrapper :first-child {
@@ -531,6 +526,18 @@ button:hover::after,
   font-size: 1.75rem;
   padding: 10px 20px;
   transition: border 0.5s ease;
+}
+
+.swiper-menu {
+  width: 100%;
+  height: 100%;
+}
+
+.container-swiper {
+  position: relative;
+  height: 600px;
+  width: 85%;
+  margin: 0 auto;
 }
 
 .contact {

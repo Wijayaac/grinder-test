@@ -26,7 +26,6 @@ btnHamburger.addEventListener("click", () => {
 
 window.addEventListener("scroll", () => {
   const windowpos = document.querySelector("html").scrollTop;
-  const navbar = document.querySelector(".navbar");
   const navbarTopPos = navbar.getBoundingClientRect().top;
 
   if (
@@ -46,3 +45,138 @@ window.addEventListener("scroll", () => {
 sal({
   threshold: 0.2,
 });
+
+var swiperMenu = "";
+
+initSwiper;
+
+const initSwiper = () => {
+  swiperMenu = new Swiper(".swiper-menu", {
+    // Optional parameters
+    direction: "horizontal",
+    loop: false,
+    init: false,
+    // enabled: false,
+
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      920: {
+        slidesPerView: 4,
+        spaceBetween: 10,
+      },
+    },
+
+    // If we need pagination
+    pagination: {
+      el: ".swiper-pagination",
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    // And if we need scrollbar
+    scrollbar: {
+      el: ".swiper-scrollbar",
+    },
+  });
+};
+
+const toggleSwiper = () => {
+  if (!swiperMenu.params) {
+    initSwiper();
+  }
+
+  swiperMenu.params.init = !swiperMenu.params.init;
+
+  if (swiperMenu.params.init) {
+    swiperMenu.init();
+  } else {
+    swiperMenu.destroy();
+  }
+};
+
+// initialize Swiper JS
+// const swiperMenu = () =>
+//   new Swiper(".swiper-menu", {
+//     // Optional parameters
+//     direction: "horizontal",
+//     loop: false,
+//     init: false,
+//     // enabled: false,
+
+//     breakpoints: {
+//       320: {
+//         slidesPerView: 1,
+//         spaceBetween: 20,
+//       },
+//       768: {
+//         slidesPerView: 3,
+//         spaceBetween: 20,
+//       },
+//       920: {
+//         slidesPerView: 4,
+//         spaceBetween: 10,
+//       },
+//     },
+
+//     // If we need pagination
+//     pagination: {
+//       el: ".swiper-pagination",
+//     },
+
+//     // Navigation arrows
+//     navigation: {
+//       nextEl: ".swiper-button-next",
+//       prevEl: ".swiper-button-prev",
+//     },
+
+//     // And if we need scrollbar
+//     scrollbar: {
+//       el: ".swiper-scrollbar",
+//     },
+//   });
+
+const buttonToggle = document.getElementById("btnToggle");
+
+// const toggleMenuSlider = () => {
+//   // let swiperInitClass = document.getElementsByClassName("swiper-intitalized").length;
+//   let swiperSlider = swiperMenu();
+//   // let isSwiperInit = "";
+//   swiperSlider.init();
+//   setTimeout(() => {
+//     swiperSlider.disable();
+//     swiperSlider.pagination.destroy();
+//     swiperSlider.navigation.destroy();
+//     swiperSlider.destroy();
+//   }, 5000);
+//   if (count > 0) {
+//     count = count - 1;
+//     // swiperSlider.init();
+//     // isSwiperInit = true;
+//     // console.log(isSwiperInit);
+//   } else {
+//     // swiperSlider.init();
+//     // console.log("else block", isSwiperInit);
+//     // swiperSlider.destroy();
+//     // isSwiperInit = false;
+//     console.log(count);
+//     count++;
+//   }
+//   // console.log(swiperInitClass);
+// };
+
+// buttonToggle.addEventListener("click", toggleMenuSlider, false);
+
+buttonToggle.addEventListener("click", toggleSwiper);
+
+window.addEventListener("resi");

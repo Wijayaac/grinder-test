@@ -16,6 +16,7 @@ if (!$data === false) {
     <title>Grinder Coffee Shop</title>
     <link rel="stylesheet" href="./public/dist/css/style.css">
     <link rel="stylesheet" href="./public/dist/css/sal.css">
+    <link rel="stylesheet" href="./public/dist/css/swiper-bundle.min.css">
 </head>
 
 <body>
@@ -24,7 +25,7 @@ if (!$data === false) {
     <!-- End Header Section -->
     <!-- Begin Hero Section -->
     <section class="hero">
-        <div class="hero__image">
+        <div class="hero__image" style="background-image: url('./public/images/Header-image.jpg');">
             <h1 class="hero__text">Life begins after Coffee</h1>
             <a href="#menuSection" class="button hero__link" data-sal="fade" data-sal-delay="300" data-sal-duration="500" data-sal-easing="ease">View Menu</a>
         </div>
@@ -40,15 +41,25 @@ if (!$data === false) {
                 variety, as, siphon, ristretto, iced brewed and acerbic affogato grinder.
             </p>
         </div>
-        <div class="menu__wrapper">
-            <?php foreach ($menus as $item) : ?>
-                <a href="#" class="menu__item" data-sal="slide-left" data-sal-delay="<?= $item['id'] * 200 ?>" data-sal-duration="600" data-sal-easing="ease">
-                    <div class="menu__image" style="background-image: url('<?= $item['source'] ?> ');">
-                    </div>
-                    <p class="menu__caption"><?= $item['caption'] ?></p>
-                </a>
-            <?php endforeach ?>
+        <div class="container-swiper">
+            <div class="swiper-menu swiper">
+                <div class="menu__wrapper swiper-wrapper">
+                    <?php foreach ($menus as $item) : ?>
+                        <div class="swiper-slide">
+                            <a href="#" class="menu__item" data-sal="slide-left" data-sal-delay="<?= $item['id'] * 200 ?>" data-sal-duration="600" data-sal-easing="ease">
+                                <div class="menu__image" style="background-image: url('<?= $item['source'] ?> ');">
+                                </div>
+                                <p class="menu__caption"><?= $item['caption'] ?></p>
+                            </a>
+                        </div>
+                    <?php endforeach ?>
+                </div>
+                <!-- <div class="swiper-pagination"></div> -->
+            </div>
+            <!-- <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div> -->
         </div>
+        <button id="btnToggle">Toggle Swiper</button>
     </section>
     <!-- End Menu Section -->
     <!-- Begin Contact Section -->
@@ -110,6 +121,7 @@ if (!$data === false) {
     <?php include('./_footer.php'); ?>
     <!-- End Footer -->
     <script src="./public/dist/js/sal.js"></script>
+    <script src="./public/dist/js/swiper-bundle.min.js"></script>
     <script src="./public/dist/js/app.js"></script>
 </body>
 

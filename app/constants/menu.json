@@ -8,19 +8,25 @@
   {
     "id": 2,
     "caption": "Breakfast",
-    "alt": "coffee image",
+    "alt": "breakfast image",
     "source": "./public/images/Gallery-2.jpg"
   },
   {
     "id": 3,
     "caption": "Sandwich",
-    "alt": "coffee image",
+    "alt": "sandwich image",
     "source": "./public/images/Gallery-3.jpg"
   },
   {
     "id": 4,
     "caption": "Juice",
-    "alt": "coffee image",
+    "alt": "juice image",
+    "source": "./public/images/Gallery-4.jpg"
+  },
+  {
+    "id": 5,
+    "caption": "Juice",
+    "alt": "juice image",
     "source": "./public/images/Gallery-4.jpg"
   }
 ]
