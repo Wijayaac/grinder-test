@@ -41,11 +41,11 @@ if (!$data === false) {
                 variety, as, siphon, ristretto, iced brewed and acerbic affogato grinder.
             </p>
         </div>
-        <div class="menu__container">
-            <div class="menu__lists swiper">
-                <div class="swiper-wrapper">
+        <div class="menu__container" id="menuContainer">
+            <div class="menu__lists swiper" id="menuLists">
+                <div class="menu__wrapper" id="menuWrapper">
                     <?php foreach ($menus as $item) : ?>
-                        <div class="swiper-slide">
+                        <div class="menu__item-wrapper">
                             <a href="#" class="menu__item" data-sal="slide-left" data-sal-delay="<?= $item['id'] * 200 ?>" data-sal-duration="600" data-sal-easing="ease">
                                 <div class="menu__image" style="background-image: url('<?= $item['source'] ?> ');">
                                 </div>
@@ -54,10 +54,7 @@ if (!$data === false) {
                         </div>
                     <?php endforeach ?>
                 </div>
-                <!-- <div class="swiper-pagination"></div> -->
             </div>
-            <!-- <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div> -->
         </div>
         <button id="btnToggle">Toggle Swiper</button>
     </section>

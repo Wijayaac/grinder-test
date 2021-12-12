@@ -44,10 +44,9 @@ window.addEventListener("scroll", function () {
 
 sal({
   threshold: 0.2
-}); // initialize Swiper JS
+}); // Global swiper menu variables for Swiper JS
 
-var swiperMenu = "";
-initSwiper;
+var swiperMenu = ""; // Initialize Swiper
 
 var initSwiper = function initSwiper() {
   swiperMenu = new Swiper(".menu__lists", {
@@ -82,96 +81,73 @@ var initSwiper = function initSwiper() {
       el: ".swiper-scrollbar"
     }
   });
-};
+}; // Toggle swiper function
+
+
+var menuListsElement = document.getElementById("menuLists");
+var menuContainerElement = document.getElementById("menuContainer");
+var menuWrapperElement = document.getElementById("menuWrapper");
+var menuItemElement = document.getElementsByClassName("menu__item-wrapper");
+var menuSwiperElement = document.getElementsByClassName("swiper-slide");
 
 var toggleSwiper = function toggleSwiper() {
   if (!swiperMenu.params) {
     initSwiper();
-  } // kalau pakai ini di block if nya
-  // swiperMenu.params.init = !swiperMenu.params.init;
-  // ini permanen valuenya mirip apa yang di init
-  // swiperMenu.originalParams.init
+  } // is there any Navigation Element
 
+
+  var hasPagination = document.getElementsByClassName("swiper-pagination").length == 0;
+  var hasButtonPrev = document.getElementsByClassName("swiper-button-prev").length == 0;
+  var hasButtonNext = document.getElementsByClassName("swiper-button-next").length == 0;
 
   if (window.matchMedia("( max-width: 920px )").matches) {
+    // Change into swiper components
+    if (menuWrapperElement.classList.contains("menu__wrapper")) {
+      // if flexbox wrapper
+      menuWrapperElement.className = "swiper-wrapper";
+    }
+
+    for (var i = 0; i < menuItemElement.length; i++) {
+      if (menuItemElement[i].classList.contains("menu__item-wrapper")) {
+        // if flexbox child
+        menuItemElement[i].className = "swiper-slide";
+      }
+    }
+
+    if (hasPagination && hasButtonNext && hasButtonPrev) {
+      menuListsElement.insertAdjacentHTML("afterend", '<div class="swiper-pagination" id="menuPagination"></div>\n <div class="swiper-button-prev" id="menuButtonPrev"></div> \n <div class="swiper-button-next" id="menuButtonNext"></div>');
+    } // intialize swiper
+
+
     swiperMenu.init();
   } else if (window.matchMedia("( min-width: 920px )").matches) {
-    swiperMenu.destroy();
+    // Change into flexbox components
+    if (menuWrapperElement.classList.contains("swiper-wrapper")) {
+      //if swiper wrapper
+      menuWrapperElement.className = "menu__wrapper";
+    }
+
+    for (var _i = 0; _i < menuSwiperElement.length; _i++) {
+      if (menuSwiperElement[_i].classList.contains("swiper-slide")) {
+        //if swiper0slide
+        menuSwiperElement[_i].className = "menu__item-wrapper";
+      }
+    }
+
+    if (!hasPagination && !hasButtonNext && !hasButtonPrev) {
+      var paginationElement = document.getElementById("menuPagination");
+      var prevButtonElement = document.getElementById("menuButtonPrev");
+      var nextButtonElement = document.getElementById("menuButtonNext");
+      paginationElement.remove();
+      prevButtonElement.remove();
+      nextButtonElement.remove(); // destroy swiper
+
+      swiperMenu.destroy();
+    }
   }
 };
 
-var changeViewport = function changeViewport() {
-  if (window.matchMedia("( max-width: 921px )").matches) {
-    window.addEventListener("resize", toggleSwiper);
-  }
-
-  return;
-};
-
-window.addEventListener("resize", changeViewport); // const buttonToggle = document.getElementById("btnToggle");
-// buttonToggle.addEventListener("click", toggleSwiper);
-// const swiperMenu = () =>
-//   new Swiper(".swiper-menu", {
-//     // Optional parameters
-//     direction: "horizontal",
-//     loop: false,
-//     init: false,
-//     // enabled: false,
-//     breakpoints: {
-//       320: {
-//         slidesPerView: 1,
-//         spaceBetween: 20,
-//       },
-//       768: {
-//         slidesPerView: 3,
-//         spaceBetween: 20,
-//       },
-//       920: {
-//         slidesPerView: 4,
-//         spaceBetween: 10,
-//       },
-//     },
-//     // If we need pagination
-//     pagination: {
-//       el: ".swiper-pagination",
-//     },
-//     // Navigation arrows
-//     navigation: {
-//       nextEl: ".swiper-button-next",
-//       prevEl: ".swiper-button-prev",
-//     },
-//     // And if we need scrollbar
-//     scrollbar: {
-//       el: ".swiper-scrollbar",
-//     },
-//   });
-// const toggleMenuSlider = () => {
-//   // let swiperInitClass = document.getElementsByClassName("swiper-intitalized").length;
-//   let swiperSlider = swiperMenu();
-//   // let isSwiperInit = "";
-//   swiperSlider.init();
-//   setTimeout(() => {
-//     swiperSlider.disable();
-//     swiperSlider.pagination.destroy();
-//     swiperSlider.navigation.destroy();
-//     swiperSlider.destroy();
-//   }, 5000);
-//   if (count > 0) {
-//     count = count - 1;
-//     // swiperSlider.init();
-//     // isSwiperInit = true;
-//     // console.log(isSwiperInit);
-//   } else {
-//     // swiperSlider.init();
-//     // console.log("else block", isSwiperInit);
-//     // swiperSlider.destroy();
-//     // isSwiperInit = false;
-//     console.log(count);
-//     count++;
-//   }
-//   // console.log(swiperInitClass);
-// };
-// buttonToggle.addEventListener("click", toggleMenuSlider, false);
+window.addEventListener("resize", toggleSwiper);
 
 /***/ }),
 
