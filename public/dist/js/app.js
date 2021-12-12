@@ -88,9 +88,10 @@ var toggleSwiper = function toggleSwiper() {
   if (!swiperMenu.params) {
     initSwiper();
   } // kalau pakai ini di block if nya
+  // swiperMenu.params.init = !swiperMenu.params.init;
+  // ini permanen valuenya mirip apa yang di init
+  // swiperMenu.originalParams.init
 
-
-  swiperMenu.params.init = !swiperMenu.params.init;
 
   if (window.matchMedia("( max-width: 920px )").matches) {
     swiperMenu.init();
