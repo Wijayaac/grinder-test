@@ -116,10 +116,9 @@ var toggleSwiper = function toggleSwiper() {
 
     if (hasPagination && hasButtonNext && hasButtonPrev) {
       menuListsElement.insertAdjacentHTML("afterend", '<div class="swiper-pagination" id="menuPagination"></div>\n <div class="swiper-button-prev" id="menuButtonPrev"></div> \n <div class="swiper-button-next" id="menuButtonNext"></div>');
+      swiperMenu.init();
     } // intialize swiper
 
-
-    swiperMenu.init();
   } else if (window.matchMedia("( min-width: 920px )").matches) {
     // Change into flexbox components
     if (menuWrapperElement.classList.contains("swiper-wrapper")) {
