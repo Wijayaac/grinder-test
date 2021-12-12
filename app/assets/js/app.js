@@ -46,30 +46,28 @@ sal({
   threshold: 0.2,
 });
 
+// initialize Swiper JS
 var swiperMenu = "";
-
 initSwiper;
 
 const initSwiper = () => {
-  swiperMenu = new Swiper(".swiper-menu", {
+  swiperMenu = new Swiper(".menu__lists", {
     // Optional parameters
     direction: "horizontal",
     loop: false,
     init: false,
     // enabled: false,
+    spaceBetween: 10,
 
     breakpoints: {
       320: {
         slidesPerView: 1,
-        spaceBetween: 20,
       },
-      768: {
-        slidesPerView: 3,
-        spaceBetween: 20,
+      670: {
+        slidesPerView: 2,
       },
       920: {
         slidesPerView: 4,
-        spaceBetween: 10,
       },
     },
 
@@ -95,17 +93,27 @@ const toggleSwiper = () => {
   if (!swiperMenu.params) {
     initSwiper();
   }
-
+  // kalau pakai ini di block if nya
   swiperMenu.params.init = !swiperMenu.params.init;
 
-  if (swiperMenu.params.init) {
+  if (window.matchMedia("( max-width: 920px )").matches) {
     swiperMenu.init();
-  } else {
+  } else if (window.matchMedia("( min-width: 920px )").matches) {
     swiperMenu.destroy();
   }
 };
 
-// initialize Swiper JS
+const changeViewport = () => {
+  if (window.matchMedia("( max-width: 921px )").matches) {
+    window.addEventListener("resize", toggleSwiper);
+  }
+  return;
+};
+
+window.addEventListener("resize", changeViewport);
+
+// const buttonToggle = document.getElementById("btnToggle");
+// buttonToggle.addEventListener("click", toggleSwiper);
 // const swiperMenu = () =>
 //   new Swiper(".swiper-menu", {
 //     // Optional parameters
@@ -146,8 +154,6 @@ const toggleSwiper = () => {
 //     },
 //   });
 
-const buttonToggle = document.getElementById("btnToggle");
-
 // const toggleMenuSlider = () => {
 //   // let swiperInitClass = document.getElementsByClassName("swiper-intitalized").length;
 //   let swiperSlider = swiperMenu();
@@ -176,7 +182,3 @@ const buttonToggle = document.getElementById("btnToggle");
 // };
 
 // buttonToggle.addEventListener("click", toggleMenuSlider, false);
-
-buttonToggle.addEventListener("click", toggleSwiper);
-
-window.addEventListener("resi");

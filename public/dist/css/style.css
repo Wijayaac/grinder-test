@@ -474,6 +474,10 @@ button:hover::after,
   }
 }
 .menu__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
   margin-top: 4rem;
 }
 .menu__wrapper :first-child {
@@ -483,7 +487,7 @@ button:hover::after,
   background-size: cover;
   background-position: center right;
 }
-.menu__item {
+.menu__item, .menu__item__item-wrapper {
   display: block;
   position: relative;
   overflow: hidden;
@@ -492,19 +496,19 @@ button:hover::after,
   margin: 0.5rem 0.5rem;
 }
 @media (min-width: 40em) {
-  .menu__item {
+  .menu__item, .menu__item__item-wrapper {
     width: 300px;
     height: 600px;
     margin: 0 0.5rem;
   }
 }
-.menu__item:hover, .menu__item:focus {
+.menu__item:hover, .menu__item__item-wrapper:hover, .menu__item:focus, .menu__item__item-wrapper:focus {
   cursor: pointer;
 }
-.menu__item:hover .menu__image, .menu__item:focus .menu__image {
+.menu__item:hover .menu__image, .menu__item__item-wrapper:hover .menu__image, .menu__item:focus .menu__image, .menu__item__item-wrapper:focus .menu__image {
   transform: scale(1.2);
 }
-.menu__item:hover .menu__caption, .menu__item:focus .menu__caption {
+.menu__item:hover .menu__caption, .menu__item__item-wrapper:hover .menu__caption, .menu__item:focus .menu__caption, .menu__item__item-wrapper:focus .menu__caption {
   border: solid 1px white;
 }
 .menu__image {
@@ -527,16 +531,14 @@ button:hover::after,
   padding: 10px 20px;
   transition: border 0.5s ease;
 }
-
-.swiper-menu {
+.menu__lists {
   width: 100%;
   height: 100%;
 }
-
-.container-swiper {
+.menu__container {
   position: relative;
   height: 600px;
-  width: 85%;
+  width: 90%;
   margin: 0 auto;
 }
 

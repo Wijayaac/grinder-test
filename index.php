@@ -41,9 +41,9 @@ if (!$data === false) {
                 variety, as, siphon, ristretto, iced brewed and acerbic affogato grinder.
             </p>
         </div>
-        <div class="container-swiper">
-            <div class="swiper-menu swiper">
-                <div class="menu__wrapper swiper-wrapper">
+        <div class="menu__container">
+            <div class="menu__lists swiper">
+                <div class="swiper-wrapper">
                     <?php foreach ($menus as $item) : ?>
                         <div class="swiper-slide">
                             <a href="#" class="menu__item" data-sal="slide-left" data-sal-delay="<?= $item['id'] * 200 ?>" data-sal-duration="600" data-sal-easing="ease">

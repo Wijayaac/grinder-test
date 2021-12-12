@@ -44,29 +44,28 @@ window.addEventListener("scroll", function () {
 
 sal({
   threshold: 0.2
-});
+}); // initialize Swiper JS
+
 var swiperMenu = "";
 initSwiper;
 
 var initSwiper = function initSwiper() {
-  swiperMenu = new Swiper(".swiper-menu", {
+  swiperMenu = new Swiper(".menu__lists", {
     // Optional parameters
     direction: "horizontal",
     loop: false,
     init: false,
     // enabled: false,
+    spaceBetween: 10,
     breakpoints: {
       320: {
-        slidesPerView: 1,
-        spaceBetween: 20
+        slidesPerView: 1
       },
-      768: {
-        slidesPerView: 3,
-        spaceBetween: 20
+      670: {
+        slidesPerView: 2
       },
       920: {
-        slidesPerView: 4,
-        spaceBetween: 10
+        slidesPerView: 4
       }
     },
     // If we need pagination
@@ -88,17 +87,28 @@ var initSwiper = function initSwiper() {
 var toggleSwiper = function toggleSwiper() {
   if (!swiperMenu.params) {
     initSwiper();
-  }
+  } // kalau pakai ini di block if nya
+
 
   swiperMenu.params.init = !swiperMenu.params.init;
 
-  if (swiperMenu.params.init) {
+  if (window.matchMedia("( max-width: 920px )").matches) {
     swiperMenu.init();
-  } else {
+  } else if (window.matchMedia("( min-width: 920px )").matches) {
     swiperMenu.destroy();
-  } // console.log(swiperMenu.params.init);
+  }
+};
 
-}; // initialize Swiper JS
+var changeViewport = function changeViewport() {
+  if (window.matchMedia("( max-width: 921px )").matches) {
+    window.addEventListener("resize", toggleSwiper);
+  }
+
+  return;
+};
+
+window.addEventListener("resize", changeViewport); // const buttonToggle = document.getElementById("btnToggle");
+// buttonToggle.addEventListener("click", toggleSwiper);
 // const swiperMenu = () =>
 //   new Swiper(".swiper-menu", {
 //     // Optional parameters
@@ -134,9 +144,7 @@ var toggleSwiper = function toggleSwiper() {
 //       el: ".swiper-scrollbar",
 //     },
 //   });
-
-
-var buttonToggle = document.getElementById("btnToggle"); // const toggleMenuSlider = () => {
+// const toggleMenuSlider = () => {
 //   // let swiperInitClass = document.getElementsByClassName("swiper-intitalized").length;
 //   let swiperSlider = swiperMenu();
 //   // let isSwiperInit = "";
@@ -163,8 +171,6 @@ var buttonToggle = document.getElementById("btnToggle"); // const toggleMenuSlid
 //   // console.log(swiperInitClass);
 // };
 // buttonToggle.addEventListener("click", toggleMenuSlider, false);
-
-buttonToggle.addEventListener("click", toggleSwiper);
 
 /***/ }),
 
